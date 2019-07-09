@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "403c87e5-0f87-4eb0-a4be-67ab5fa3a937",
+		"name": "Demo_Automate_v0.0.1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "healthcheck",
+			"item": [
+				{
+					"name": "healthcheck_test",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "bdf30495-359b-4261-93b8-792471f68066",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "84343072-86e7-4b4f-92ff-3673307dfc91",
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function(){",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"var responseJSON",
+									"",
+									"try{",
+									"    responseJSON = JSON.parse(responseBody)",
+									"    tests['Response is valid JSON'] = true",
+									"    validateResponse()",
+									"}catch(e) {",
+									"    tests['Response is valid JSON'] = false",
+									"}",
+									"",
+									"//Validate response",
+									"",
+									"function validateResponse(){",
+									"    pm.test('Check parameters', function () {",
+									"        pm.expect(responseJSON).to.have.all.keys('success')",
+									"    })",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{healthcheck_api}}",
+							"host": [
+								"{{healthcheck_api}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "healthcheck_test",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{healthcheck_api}}",
+									"host": [
+										"{{healthcheck_api}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Jul 2019 07:32:41 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "16"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Age",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
