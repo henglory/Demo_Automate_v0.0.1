@@ -19,18 +19,22 @@
   },
   "homepage": "https://github.com/henglory/Demo_Automate_v0.0.1#readme",
   "dependencies": {
-    "@babel/cli": "^7.5.0",
-    "@babel/core": "^7.5.0",
-    "@babel/node": "^7.5.0",
-    "@babel/preset-env": "^7.5.2",
-    "babel-cli": "^6.26.0",
-    "babel-preset": "^1.0.15",
-    "babel-preset-es2015": "^6.24.1",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "buffer-replace": "^1.0.0",
     "express": "^4.17.1",
     "newman": "^4.5.1",
+    "newman-reporter-html": "^1.0.3",
     "newman-reporter-htmlextra": "^1.8.1",
     "npm-run-all": "^4.1.5",
     "postman-collection": "^3.5.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
   }
 }
