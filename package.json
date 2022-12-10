@@ -24,7 +24,7 @@
     "@babel/node": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "buffer-replace": "^1.0.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "newman": "^4.5.1",
     "newman-reporter-html": "^1.0.3",
     "newman-reporter-htmlextra": "^1.8.1",
